@@ -45,7 +45,7 @@
     opacity: 1;
 }
 
-#cadastroemailCPF {
+#cadastroemailEmail {
     position: absolute;
     width: 200px;
     text-align: left;
@@ -60,7 +60,7 @@
     opacity: 1;
 }
 
-#cadastroemailInputCPF {
+#cadastroemailInputEmail {
     position: absolute;
     width: 200px;
     height: 30px;
@@ -145,4 +145,4 @@
     letter-spacing: 0px;
     color: #4A4A4A;
     opacity: 1;
-}
+}   

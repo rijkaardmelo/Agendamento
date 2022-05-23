@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Transparencia from './../../components/transparencia/Transparencia'
 import Login from '../../components/login/Login';
 import CadastroCPF from '../../components/cadastro/CadastroCPF';
+import CadastroEmail from '../../components/cadastro/CadastroEmail';
 
 import './Home.css'
 
@@ -13,7 +14,9 @@ function Home() {
         if (screen === 'login') {
             return <Login event={showCadastroCPF} />
         } else if (screen === 'cadastrocpf') {
-            return <CadastroCPF event={showLogin} />
+            return <CadastroCPF login={showLogin} email={showCadastroEmail} />
+        }else if (screen === 'cadastroemail') {
+            return <CadastroEmail login={showLogin} />
         }else{
             return <h1>Erro</h1>
         }
@@ -27,9 +30,9 @@ function Home() {
         setScreen('cadastrocpf')
     }
 
-    // const showCadastroEmail = () => {
-    //     setScreen('cadastroemail')
-    // }
+    const showCadastroEmail = () => {
+        setScreen('cadastroemail')
+    }
 
     return (
         <div id="Home">
