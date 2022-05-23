@@ -1,7 +1,7 @@
 import './CadastroCPF.css'
 
-export default function CadastroCPF(props){
-    return(
+export default function CadastroCPF(props) {
+    return (
         <div id='CadastroCPF'>
             <span id='cadastrocpfJa'>Já tem uma conta?</span>
             <button id="cadastrocpfEntrar" onClick={props.login}><div></div><span>Entrar</span></button>
@@ -9,7 +9,7 @@ export default function CadastroCPF(props){
                 <span id='cadastrocpfPreencha'>Preencha os campos abaixo</span>
                 <span id='cadastrocpfRapido'>É rápido, simples e seguro</span>
                 <span id='cadastrocpfCPF'>CPF: </span>
-                <input type="text" id="cadastrocpfInputCPF" />
+                <input id="cadastrocpfInputCPF" type="text" />
                 <button id="cadastrocpfButtonContinuar" onClick={props.email}><span>Continuar</span></button>
             </div>
         </div>

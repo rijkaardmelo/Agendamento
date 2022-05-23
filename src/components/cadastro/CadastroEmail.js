@@ -9,8 +9,8 @@ export default function CadastroEmail(props){
                 <span id='cadastroemailPreencha'>Preencha os campos abaixo</span>
                 <span id='cadastroemailRapido'>É rápido, simples e seguro</span>
                 <span id='cadastroemailEmail'>Email: </span>
-                <input type="text" id="cadastroemailInputEmail" />
-                <button id="cadastroemailButtonContinuar" ><span>Continuar</span></button>
+                <input id="cadastroemailInputEmail" type="text"/>
+                <button id="cadastroemailButtonContinuar" onClick={props.usuario}><span>Continuar</span></button>
             </div>
         </div>
     );

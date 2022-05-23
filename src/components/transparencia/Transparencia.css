@@ -43,7 +43,7 @@
     height: 30px;
     left: 50%;
     top: 70%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background: var(--unnamed-color-0f5aef) 0% 0% no-repeat padding-box;
     background: #0F5AEF 0% 0% no-repeat padding-box;
     border-radius: 4px;
@@ -56,19 +56,19 @@
     opacity: 1;
 }
 
-#transIconCalendar{
+#transIconCalendar {
     position: absolute;
     width: 40px;
     height: 44px;
     left: 50%;
     top: 24%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-image: url('./../../resource/iconCalendar.svg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
 
-#transIconLais{
+#transIconLais {
     position: absolute;
     width: 100px;
     height: 44px;
@@ -79,7 +79,7 @@
     background-repeat: no-repeat;
 }
 
-#transIconUFRN{
+#transIconUFRN {
     position: absolute;
     width: 100px;
     height: 44px;
