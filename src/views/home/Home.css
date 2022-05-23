@@ -1,0 +1,21 @@
+#Home{
+    display: flex;
+    margin: 0;
+}
+
+#homeTransparencia{
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    min-height: 400px;
+    background-image: url('./../../resource/Foto01.png');
+    background-repeat: no-repeat;
+
+}
+
+#homePrincipal{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 400px;
+}
