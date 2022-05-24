@@ -7,6 +7,7 @@ import CadastroEmail from '../../components/cadastro/CadastroEmail';
 import CadastroUsuario from '../../components/cadastro/CadastroUsuario';
 
 import './Home.css'
+import Filtro from '../../components/filtro/Filtro';
 
 
 function Home() {
@@ -21,7 +22,8 @@ function Home() {
             return <CadastroEmail login={showLogin} usuario={showCadastroUsuario}/>
         } else if(screen === 'cadastrousuario'){
             return <CadastroUsuario login={showLogin}/>
-
+        } else if(screen === 'filtro'){
+            return <Filtro login={showLogin}/>
         }
     }
 
@@ -41,10 +43,14 @@ function Home() {
         setScreen('cadastrousuario')
     }
 
+    const showFiltro = () => {
+        setScreen('filtro')
+    }
+
     return (
         <div id="Home">
             <div id="homeTransparencia">
-                <Transparencia />
+                <Transparencia filtro={showFiltro}/>
             </div>
             <div id="homePrincipal">
                 <ShowScreens />

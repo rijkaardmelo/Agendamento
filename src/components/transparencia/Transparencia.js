@@ -1,7 +1,7 @@
 // import Box from '@mui/material/Box'
 import './Transparencia.css'
 
-export default function Transparencia() {
+export default function Transparencia(props) {
     return (
         <div id='Trasparencia'>
             <div id='transIconCalendar' />
@@ -15,7 +15,7 @@ export default function Transparencia() {
                 Evite filas e aglomeração<br />
                 O seu bem é o bem de todos
             </span>
-            <button id='transTransferencia'>TRANSFERÊNCIA</button>
+            <button id='transTransferencia' onClick={props.filtro}>TRANSFERÊNCIA</button>
             <div id='transIconLais' />
             <div id='transIconUFRN' />
         </div>
