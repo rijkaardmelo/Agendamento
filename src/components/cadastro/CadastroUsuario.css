@@ -180,7 +180,7 @@
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 76px;
+    width: 106px;
     height: 30px;
     background: var(--unnamed-color-0a0a0a) 0% 0% no-repeat padding-box;
     background: #0A0A0A 0% 0% no-repeat padding-box;
@@ -192,7 +192,7 @@
 #cadastrousuarioEntrar>span {
     position: absolute;
     top: 0px;
-    left: 30px;
+    right: 20px;
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);
     font: normal normal normal 16px/25px Poppins;
@@ -204,7 +204,7 @@
 #cadastrousuarioEntrar>div {
     position: absolute;
     top: 6px;
-    left: 10px;
+    left: 20px;
     width: 12px;
     height: 16px;
     background-image: url('./../../resource/iconUser.svg');
@@ -217,7 +217,7 @@
     width: 148px;
     height: 30px;
     top: 10px;
-    right: 80px;
+    right: 110px;
     text-align: center;
     padding-top: 4px;
     font: var(--unnamed-font-style-normal) normal 300 16px/25px var(--unnamed-font-family-poppins);

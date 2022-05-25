@@ -1,6 +1,11 @@
 import './CadastroUsuario.css'
 
 export default function CadastroUsuario(props) {
+    
+    const validacao = () => {
+        window.location.href = 'agendamento'
+    }
+    
     return (
         <div id='CadastroUsuario'>
             <span id='cadastrousuarioJa'>Já tem uma conta?</span>
@@ -16,7 +21,7 @@ export default function CadastroUsuario(props) {
                 <input id="cadastrousuarioInputSenha" type="password" />
                 <span id='cadastrousuarioConfirmacao'>Confirmação de senha: </span>
                 <input id="cadastrousuarioInputConfirmacao" type="password" />
-                <button id="cadastrousuarioButtonCadastrar" ><span>Cadastrar</span></button>
+                <button id="cadastrousuarioButtonCadastrar" onClick={validacao} ><span>Cadastrar</span></button>
             </div>
         </div>
     );
