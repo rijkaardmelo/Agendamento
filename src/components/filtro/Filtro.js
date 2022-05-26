@@ -17,12 +17,8 @@ export default function Filtro(props) {
                     <label id='filtroMunicipio'>
                         <span>Município</span>
                     </label>
-                    <Button id='filtroCancelar' onClick={() => setVisivel(false)}>
-                        Cancelar
-                    </Button>
-                    <Button id='buttonFiltrar'>
-                        Filtrar
-                    </Button>
+                    <Button id='filtroCancelar' onClick={() => setVisivel(false)}> Cancelar </Button>
+                    <Button id='buttonFiltrar'> Filtrar </Button>
                 </div>
             )}
 
