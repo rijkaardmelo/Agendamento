@@ -163,14 +163,9 @@
     background: var(--unnamed-color-0f5aef) 0% 0% no-repeat padding-box;
     background: #0F5AEF 0% 0% no-repeat padding-box;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#cadastrousuarioButtonCadastrar>span {
-    font: var(--unnamed-font-style-normal) normal bold 16px/25px var(--unnamed-font-family-poppins);
+    font: var(--unnamed-font-style-normal) normal bold 14px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);
-    text-align: left;
-    font: normal normal bold 16px/25px Poppins;
+    font: normal normal bold 14px/25px Poppins;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -180,19 +175,12 @@
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 106px;
+    width: 120px;
     height: 30px;
     background: var(--unnamed-color-0a0a0a) 0% 0% no-repeat padding-box;
     background: #0A0A0A 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#cadastrousuarioEntrar>span {
-    position: absolute;
-    top: 0px;
-    right: 20px;
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);
     font: normal normal normal 16px/25px Poppins;
@@ -201,24 +189,14 @@
     opacity: 1;
 }
 
-#cadastrousuarioEntrar>div {
-    position: absolute;
-    top: 6px;
-    left: 20px;
-    width: 12px;
-    height: 16px;
-    background-image: url('./../../resource/iconUser.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
 
 #cadastrousuarioJa {
-    position: fixed;
-    width: 148px;
+    position: absolute;
+    width: 140px;
     height: 30px;
     top: 10px;
-    right: 110px;
-    text-align: center;
+    right: 140px;
+    text-align: right;
     padding-top: 4px;
     font: var(--unnamed-font-style-normal) normal 300 16px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);

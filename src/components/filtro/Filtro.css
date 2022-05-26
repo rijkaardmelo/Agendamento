@@ -9,19 +9,13 @@
     height: 30px;
     top: 10px;
     right: 10px;
-    ;
     background: var(--unnamed-color-0a0a0a) 0% 0% no-repeat padding-box;
     background: #0A0A0A 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#filtroVoltar>span {
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);
-    text-align: left;
-    font: normal normal normal 16px/25px Poppins;
+    font: normal normal normal 14px/25px Poppins;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -33,19 +27,13 @@
     height: 30px;
     top: 10px;
     right: 120px;
-    ;
     background: var(--unnamed-color-0a0a0a) 0% 0% no-repeat padding-box;
     background: #0A0A0A 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#filtroFiltrar>span {
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-poppins);
     letter-spacing: var(--unnamed-character-spacing-0);
-    text-align: left;
-    font: normal normal normal 16px/25px Poppins;
+    font: normal normal normal 14px/25px Poppins;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -131,20 +119,15 @@
 
 #filtroCancelar {
     position: absolute;
-    width: 80px;
+    width: 90px;
     height: 30px;
     left: 50px;
     bottom: 20px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#filtroCancelar>span {
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
-    letter-spacing: var(--unnamed-character-spacing-0);
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-poppins);
     color: var(--unnamed-color-0a0a0a);
-    font: normal normal normal 16px/25px Poppins;
+    font: normal normal normal 14px/25px Poppins;
     letter-spacing: 0px;
     color: #0A0A0A;
     opacity: 1;
@@ -152,22 +135,16 @@
 
 #buttonFiltrar {
     position: absolute;
-    width: 80px;
+    width: 90px;
     height: 30px;
     right: 50px;
     bottom: 20px;
     background: var(--unnamed-color-0f5aef) 0% 0% no-repeat padding-box;
     background: #0F5AEF 0% 0% no-repeat padding-box;
     border-radius: 4px;
-    opacity: 1;
-}
-
-#buttonFiltrar>span {
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
-    letter-spacing: var(--unnamed-character-spacing-0);
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-poppins);
     color: var(--unnamed-color-0a0a0a);
-    text-align: left;
-    font: normal normal normal 16px/25px Poppins;
+    font: normal normal normal 14px/25px Poppins;
     letter-spacing: 0px;
     color: #0A0A0A;
     opacity: 1;

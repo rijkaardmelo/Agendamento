@@ -1,7 +1,14 @@
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+
+import './Agendamento.css'
+
 export default function Agendamento (){
     return(
         <div id="Agendamento">
-            <h1>Agendamento</h1>
+            <div id='agendamentoNav'>
+                <CalendarTodayOutlinedIcon id='agendamentoCalendar'/>
+                <label id='agendamentoOnline'>Agendamento online</label>
+            </div>
         </div>
     );
 }

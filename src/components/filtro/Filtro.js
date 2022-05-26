@@ -1,3 +1,4 @@
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 import './Filtro.css'
@@ -6,8 +7,8 @@ export default function Filtro(props) {
     const [visivel, setVisivel] = useState(false)
     return (
         <div id="Filtro">
-            <button id='filtroVoltar' onClick={props.login}><span>Voltar</span></button>
-            <button id='filtroFiltrar' onClick={() => setVisivel(true)}><span>Filtrar</span></button>
+            <Button id='filtroVoltar' onClick={props.login}>Voltar</Button>
+            <Button id='filtroFiltrar' onClick={() => setVisivel(true)}>Filtrar</Button>
             <span id='filtroTransparencia'>Transparência</span>
             {visivel && (
                 <div id='divFiltro'>
@@ -16,12 +17,12 @@ export default function Filtro(props) {
                     <label id='filtroMunicipio'>
                         <span>Município</span>
                     </label>
-                    <button id='filtroCancelar' onClick={() => setVisivel(false)}>
-                        <span>Cancelar</span>
-                    </button>
-                    <button id='buttonFiltrar'>
-                        <span>Filtrar</span>
-                    </button>
+                    <Button id='filtroCancelar' onClick={() => setVisivel(false)}>
+                        Cancelar
+                    </Button>
+                    <Button id='buttonFiltrar'>
+                        Filtrar
+                    </Button>
                 </div>
             )}
 

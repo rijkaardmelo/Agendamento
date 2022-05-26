@@ -1,3 +1,6 @@
+import Button from '@mui/material/Button';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+
 import './Login.css'
 
 export default function Login(props) {
@@ -9,7 +12,9 @@ export default function Login(props) {
     return (
         <div id='Login'>
             <span id='loginNao'>Não tem uma conta?</span>
-            <button id="loginCriar" onClick={props.cadastro}><div></div><span>Criar um usuário</span></button>
+            <Button id="loginCriar" variant="contained" startIcon={<PersonOutlineOutlinedIcon />} onClick={props.cadastro}>
+                Criar um usuário
+                </Button>
             <div id='formLogin'>
                 <span id='loginPreencha'>Preencha os campos abaixo</span>
                 <span id='loginEmail' type="email">Email:</span>
@@ -17,7 +22,7 @@ export default function Login(props) {
                 <span id='loginSenha'>Senha: </span>
                 <input id="loginInputPassword" type="password" />
                 <span id='loginEsqueceu'>Esqueceu sua senha? </span>
-                <button id="loginButtonEntrar" onClick={validacao}><span>Entrar</span></button>
+                <Button id="loginButtonEntrar" onClick={validacao}>Entrar</Button>
             </div>
         </div>
     );

@@ -1,15 +1,18 @@
+import Button from '@mui/material/Button';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+
 import './CadastroUsuario.css'
 
 export default function CadastroUsuario(props) {
-    
+
     const validacao = () => {
         window.location.href = 'agendamento'
     }
-    
+
     return (
         <div id='CadastroUsuario'>
             <span id='cadastrousuarioJa'>Já tem uma conta?</span>
-            <button id="cadastrousuarioEntrar" onClick={props.login}><div></div><span>Entrar</span></button>
+            <Button id="cadastrousuarioEntrar" variant="contained" startIcon={<PersonOutlineOutlinedIcon />} onClick={props.login}>Entrar</Button>
             <div id='cadastrousuarioForm'>
                 <span id='cadastrousuarioPreencha'>Preencha os campos abaixo</span>
                 <span id='cadastrousuarioRapido'>É rápido, simples e seguro</span>
@@ -21,7 +24,7 @@ export default function CadastroUsuario(props) {
                 <input id="cadastrousuarioInputSenha" type="password" />
                 <span id='cadastrousuarioConfirmacao'>Confirmação de senha: </span>
                 <input id="cadastrousuarioInputConfirmacao" type="password" />
-                <button id="cadastrousuarioButtonCadastrar" onClick={validacao} ><span>Cadastrar</span></button>
+                <Button id="cadastrousuarioButtonCadastrar" onClick={validacao} >Cadastrar</Button>
             </div>
         </div>
     );
