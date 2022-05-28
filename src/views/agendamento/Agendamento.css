@@ -40,18 +40,29 @@
     transform: translate(0, -50%);
     text-transform: none;
 }
-#agendamentoMeusSelect{
-    background-color: aqua;
+#agendamentoMeusSelect,  #agendamentoAgendarSelect{
+    background-color: #2196f3;
 }
 
-#agendamentoMeus>label{
+#agendamentoMeus>label, #agendamentoAgendar>label{
     padding-left: 10px;
     color: black;
     font-size: 16px;
     font-family: 'Poppins';
 }
 
-#agendamentoAgendar {
+#agendamentoMeusSelect>label, #agendamentoAgendarSelect>label{
+    padding-left: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: 'Poppins';
+}
+
+#agendamentoMeusSelect, #agendamentoAgendarSelect{
+    color: #FFFFFF;
+}
+
+#agendamentoAgendar, #agendamentoAgendarSelect {
     position: absolute;
     width: 120px;
     height: 40px;
@@ -59,13 +70,6 @@
     top: 50%;
     transform: translate(0, -50%);
     text-transform: none;
-}
-
-#agendamentoAgendar>label{
-    padding-left: 10px;
-    color: black;
-    font-size: 16px;
-    font-family: 'Poppins';
 }
 
 #agendamentoAvatar {

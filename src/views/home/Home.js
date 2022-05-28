@@ -5,10 +5,9 @@ import Login from '../../components/login/Login';
 import CadastroCPF from '../../components/cadastro/CadastroCPF';
 import CadastroEmail from '../../components/cadastro/CadastroEmail';
 import CadastroUsuario from '../../components/cadastro/CadastroUsuario';
-
-import './Home.css'
 import Filtro from '../../components/filtro/Filtro';
 
+import './Home.css'
 
 function Home() {
     const [screen, setScreen] = useState('login')

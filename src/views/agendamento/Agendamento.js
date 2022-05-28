@@ -1,4 +1,4 @@
-import useState from 'react';
+import {useState} from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
@@ -10,11 +10,17 @@ import './Agendamento.css'
 import { Button } from '@mui/material';
 
 export default function Agendamento() {
-    const [styleAgendamentoMeus, setStyleAgendamentoMeus] = useState("agendamentoMeus");
+    const [styleAgendamentoMeus, setStyleAgendamentoMeus] = useState("agendamentoMeusSelect")
+    const [styleAgendamentoAgendar, setStyleAgendamentoAgendar] = useState("agendamentoAgendar")
 
     const changeAgendamentoMeus = () => {
         setStyleAgendamentoMeus("agendamentoMeusSelect");
-      };
+        setStyleAgendamentoAgendar("agendamentoAgendar")
+    }
+    const changeAgendamentoAgendar = () => {
+        setStyleAgendamentoMeus("agendamentoMeus");
+        setStyleAgendamentoAgendar("agendamentoAgendarSelect");
+    }
     return (
         <div id="Agendamento">
             <AppBar id='agendamentoNav' >
@@ -26,7 +32,7 @@ export default function Agendamento() {
                     <FolderOpenOutlinedIcon sx={{ fontSize: 30 }} />
                     <label>Meus agendamentos</label>
                 </Button>
-                <Button id='agendamentoAgendar'>
+                <Button id={styleAgendamentoAgendar} onClick={changeAgendamentoAgendar}>
                     <EditIcon sx={{ fontSize: 30 }} />
                     <label>Agendar</label>
                 </Button>
