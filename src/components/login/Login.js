@@ -1,51 +1,68 @@
-import {useNavigate} from "react-router-dom";
-import {useState} from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+
+import axios from 'axios';
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
-import './Login.css'
+import './Login.css';
 
 export default function Login(props) {
 
-    const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [redirect, setRedirect] = useState(false);
+    const navigate = useNavigate()
 
-    const validacao = async (e) => {
-        e.preventDefault();
+    const [login, setLogin] = useState({
+        email: '',
+        password: ''
+    })
 
-      await fetch('  http://0.0.0.0:3004/users', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            credentials: 'include',
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
-
-        setRedirect(true);
+    const validacao = () => {
+        if (!(login.email === '' || login.password === '')) {
+            axios.post('http://0.0.0.0:3004/login', login)
+                .then(res => {
+                    if (res.status === 200)
+                        navigate('/agendamento')
+                    else
+                        Promise.reject()
+                })
+                .catch(err => console.log(err))
+        }
     }
 
-    if (redirect) {
-        navigate('/agendamento');
+    const loginChange = (e) => {
+        setLogin({ ...login, [e.target.name]: e.target.value })
     }
 
     return (
         <div id='Login'>
             <label id='loginNao'>Não tem uma conta?</label>
-            <Button id="loginCriar" variant="contained" startIcon={<PersonOutlineOutlinedIcon />} onClick={props.cadastro}>
+            <Button 
+            id="loginCriar" 
+            variant="contained" 
+            startIcon={<PersonOutlineOutlinedIcon />} 
+            onClick={props.cadastro}>
                 Criar um usuário
-                </Button>
+            </Button>
             <Box id='formLogin'>
                 <label id='loginPreencha'>Preencha os campos abaixo</label>
-                <label id='loginEmail' type="email" onChange={e => setEmail(e.target.value)}>Email:</label>
-                <input id="loginInputEmail" type="text" />
+                <label id='loginEmail'>Email:</label>
+                <input
+                    id="loginInputEmail"
+                    type="email"
+                    value={login.email}
+                    name='email'
+                    onChange={e => loginChange(e)}
+                />
                 <label id='loginSenha'>Senha: </label>
-                <input id="loginInputPassword" type="password" onChange={e => setPassword(e.target.value)}/>
+                <input
+                    id="loginInputPassword"
+                    type="password"
+                    value={login.password}
+                    name='password'
+                    onChange={e => loginChange(e)}
+                />
                 <label id='loginEsqueceu'>Esqueceu sua senha? </label>
                 <Button id="loginButtonEntrar" onClick={validacao}>Entrar</Button>
             </Box>

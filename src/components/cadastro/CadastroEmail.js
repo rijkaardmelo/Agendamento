@@ -1,20 +1,43 @@
+import { useState } from 'react';
+
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
-import './CadastroEmail.css'
+import './CadastroEmail.css';
 
-export default function CadastroEmail(props){
-    return(
+export default function CadastroEmail(props) {
+
+    var re = /\S+@\S+\.\S+/;
+    
+    const [email, setEmail] = useState()
+
+    const validarEmail = (e) => {
+        e.preventDefault()
+        if(re.test(email))
+            props.usuario(email)
+        else{
+            alert("Email incorreto")
+        }
+    }
+
+    return (
         <div id='CadastroEmail'>
-            <span id='cadastroemailJa'>Já tem uma conta?</span>
-            <Button id="cadastroemailEntrar" variant="contained" startIcon={<PersonOutlineOutlinedIcon />} onClick={props.login}>Entrar</Button>
-            <div id='cadastroemailForm'>
-                <span id='cadastroemailPreencha'>Preencha os campos abaixo</span>
-                <span id='cadastroemailRapido'>É rápido, simples e seguro</span>
-                <span id='cadastroemailEmail'>Email: </span>
-                <input id="cadastroemailInputEmail" type="text"/>
-                <Button id="cadastroemailButtonContinuar" onClick={props.usuario}>Continuar</Button>
-            </div>
+            <label id='cadastroemailJa'>Já tem uma conta?</label>
+            <Button
+                id="cadastroemailEntrar"
+                variant="contained"
+                startIcon={<PersonOutlineOutlinedIcon />}
+                onClick={props.login}>
+                Entrar
+            </Button>
+            <Box id='cadastroemailForm'>
+                <label id='cadastroemailPreencha'>Preencha os campos abaixo</label>
+                <label id='cadastroemailRapido'>É rápido, simples e seguro</label>
+                <label id='cadastroemailEmail'>Email: </label>
+                <input id="cadastroemailInputEmail" type="text" onChange={(e) => setEmail(e.target.value)}/>
+                <Button id="cadastroemailButtonContinuar" onClick={validarEmail}>Continuar</Button>
+            </Box>
         </div>
     );
 }
