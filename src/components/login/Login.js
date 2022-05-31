@@ -20,7 +20,7 @@ export default function Login(props) {
 
     const validacao = () => {
         if (!(login.email === '' || login.password === '')) {
-            axios.post('http://0.0.0.0:3004/login', login)
+            axios.post('http://10.200.36.243:3004/login', login)
                 .then(res => {
                     if (res.status === 200)
                         navigate('/agendamento')

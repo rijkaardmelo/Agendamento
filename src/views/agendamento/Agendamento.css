@@ -6,7 +6,7 @@
 }
 
 #agendamentoNav {
-    position: absolute;
+    position: fixed;
     height: 50px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -22,7 +22,7 @@
     text-transform: none;
 }
 
-#agendamentoOnline>label{
+#agendamentoOnline>label {
     padding-left: 10px;
     color: var(--unnamed-color-0a0a0a);
     font: normal normal bold 18px/26px Poppins;
@@ -31,7 +31,8 @@
     opacity: 1;
 }
 
-#agendamentoMeus, #agendamentoMeusSelect {
+#agendamentoMeus,
+#agendamentoMeusSelect {
     position: absolute;
     width: 220px;
     height: 40px;
@@ -40,29 +41,35 @@
     transform: translate(0, -50%);
     text-transform: none;
 }
-#agendamentoMeusSelect,  #agendamentoAgendarSelect{
+
+#agendamentoMeusSelect,
+#agendamentoAgendarSelect {
     background-color: #2196f3;
 }
 
-#agendamentoMeus>label, #agendamentoAgendar>label{
+#agendamentoMeus>label,
+#agendamentoAgendar>label {
     padding-left: 10px;
     color: black;
     font-size: 16px;
     font-family: 'Poppins';
 }
 
-#agendamentoMeusSelect>label, #agendamentoAgendarSelect>label{
+#agendamentoMeusSelect>label,
+#agendamentoAgendarSelect>label {
     padding-left: 10px;
     color: #FFFFFF;
     font-size: 16px;
     font-family: 'Poppins';
 }
 
-#agendamentoMeusSelect, #agendamentoAgendarSelect{
+#agendamentoMeusSelect,
+#agendamentoAgendarSelect {
     color: #FFFFFF;
 }
 
-#agendamentoAgendar, #agendamentoAgendarSelect {
+#agendamentoAgendar,
+#agendamentoAgendarSelect {
     position: absolute;
     width: 120px;
     height: 40px;
@@ -75,6 +82,35 @@
 #agendamentoAvatar {
     position: absolute;
     right: 100px;
+    width: 36px;
+    height: 36px;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+#agendamentoPrincipal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin-top: 50px;
+    background: #F1F5F9 0% 0% no-repeat padding-box;
+}
+
+#agendamentoPainel {
+    position: relative;
+    width: 400px;
+    height: 100vh;
+}
+
+#agendamentoForm {
+    position: absolute;
+    width: 280px;
+    height: 400px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
 }
