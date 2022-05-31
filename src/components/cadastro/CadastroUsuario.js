@@ -15,9 +15,9 @@ export default function CadastroUsuario(props) {
 
     const [cadastro, setCadastro] = useState({
         nome: '',
-        email: '',
+        email: props.email,
         data_nascimento: '31/05/2022',
-        password: '123456'
+        password: ''
     })
 
     const validacao = (e) => {
@@ -25,7 +25,7 @@ export default function CadastroUsuario(props) {
         console.log()
         axios.post('http://0.0.0.0:3004/users', cadastro)
             .then(res => {
-                if (res.status === 200)
+                if (res.status === 201)
                     navigate('/agendamento')
                 else
                     Promise.reject()
@@ -55,8 +55,8 @@ export default function CadastroUsuario(props) {
                     id="cadastrousuarioInputEmail"
                     type="text"
                     name="email"
-                    defaultValue={props.email}
-                    onChange={e => setCadastro({email:e.target.value})}
+                    value={cadastro.email}
+                    onChange={e => cadastroChange(e)}
                     readOnly
                 />
                 <label id='cadastrousuarioNome'>Nome: </label>
@@ -64,16 +64,16 @@ export default function CadastroUsuario(props) {
                     id="cadastrousuarioInputNome"
                     type="text"
                     name="nome"
-                    // value={cadastro.nome}
-                    onChange={e => setCadastro({nome:e.target.value})}
+                    value={cadastro.nome}
+                    onChange={e => cadastroChange(e)}
                 />
                 <label id='cadastrousuarioSenha'>Senha: </label>
                 <input
                     id="cadastrousuarioInputSenha"
                     type="password"
                     name="password"
-                    // value={cadastro.password}
-                    onChange={e => setCadastro({password:e.target.value})}
+                    value={cadastro.password}
+                    onChange={e => cadastroChange(e)}
                 />
                 <label id='cadastrousuarioConfirmacao'>Confirmação de senha: </label>
                 <input id="cadastrousuarioInputConfirmacao" type="password" />

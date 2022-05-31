@@ -106,7 +106,7 @@
     opacity: 1;
 }
 
-#filtroMunicipio>span {
+#filtroMunicipio>label {
     position: relative;
     top: 2px;
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 16px/25px var(--unnamed-font-family-poppins);
@@ -142,10 +142,22 @@
     background: var(--unnamed-color-0f5aef) 0% 0% no-repeat padding-box;
     background: #0F5AEF 0% 0% no-repeat padding-box;
     border-radius: 4px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-poppins);
     color: var(--unnamed-color-0a0a0a);
     font: normal normal normal 14px/25px Poppins;
     letter-spacing: 0px;
     color: #0A0A0A;
     opacity: 1;
+}
+
+#filtroLista{
+    position: relative;
+    width: 200px;
+    max-height: calc(100% - 220px);
+    bottom: 60px;
+    /* background-color: #FFFFFF; */
+    color: #FFFFFF;
+    font: normal normal normal 14px/25px Poppins;
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%);
 }
