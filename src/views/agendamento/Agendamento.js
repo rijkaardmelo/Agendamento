@@ -14,23 +14,18 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-
 import TextField from '@mui/material/TextField';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import './Agendamento.css'
+import pt from "date-fns/locale/pt";
 
 export default function Agendamento() {
 
-    const [value, setValue] = useState(new Date('2014-08-18T21:11:54'));
+    registerLocale("pt", pt);
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
-    };
+    const [date, setDate] = useState(new Date());
 
     const [campanhas, setCampanhas] = useState({
         id: '',
@@ -94,6 +89,17 @@ export default function Agendamento() {
         setStatus(false)
     }
 
+    const Input = ({ onChange, placeholder, value, isSecure, id, onClick }) => (
+        <TextField
+            onChvalueange={onChange}
+            placeholder={placeholder}
+            value={date}
+            isSecure={isSecure}
+            id={id}
+            onClick={onClick}
+        />
+    );
+
 
     const Exibir = () => {
         if (status)
@@ -106,38 +112,31 @@ export default function Agendamento() {
                 <div id='agendamentoPainel'>
                     <Box id="agendamentoForm">
                         <FormControl sx={{ width: 200 }} size="small">
-                            <Select
-                                value={campanhas.nome}
-                            // onChange={campanhasChange}
-                            >
+                            <Select value={campanhas.nome}>
                                 {campanhas.map(campanha => <MenuItem value={campanha.id}>{campanha.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
+
                         <FormControl sx={{ width: 200 }} size="small">
-                            <Select
-                                value={grupos.nome}
-                            // onChange={campanhasChange}
-                            >
+                            <Select value={grupos.nome}>
                                 {grupos.map(grupo => <MenuItem value={grupo.id}>{grupo.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
 
                         <FormControl sx={{ width: 200 }} size="small">
-                            <Select
-                                value={exames.nome}
-                            // onChange={campanhasChange}
-                            >
+                            <Select value={exames.nome}>
                                 {exames.map(exame => <MenuItem value={exame.id}>{exame.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
 
-                        <DesktopDatePicker
-                            label="Date desktop"
-                            inputFormat="dd/MM/yyyy"
-                            value={value}
-                            onChange={handleChange}
-                            // renderInput={(params) => <TextField {...params} />}
-                        />
+                        <DatePicker 
+                            onChange={(date:Date) => setDate(date)} 
+                            value={date}
+                            locale="pt"
+                            selected={date}
+                            customInput={<TextField sx={{ width: 200 }} size="small" value={date}/>}
+                            dateFormat="dd/MM/yyyy"
+                        /> 
 
                     </Box>
                 </div>
