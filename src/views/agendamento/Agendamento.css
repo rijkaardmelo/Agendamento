@@ -97,7 +97,7 @@
 }
 
 #agendamentoPainel {
-    position: relative;
+    position: fixed;
     width: 400px;
     height: 100vh;
 }
@@ -114,3 +114,73 @@
     transform: translate(-50%, -50%);
     opacity: 1;
 }
+
+#agendamentoProcurar{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#agendamentoForm>label{
+    position: absolute;
+    width: 200px;
+    background-color: #2196f3;
+    height: 40px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+}
+
+#agendLCampanha{
+    top: 0px;
+}
+
+#agendFCCampanha{
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+}
+
+#agendLGrupo{
+    top: 80px;
+}
+
+#agendFCGrupo{
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+}
+
+#agendLExame{
+    top: 160px;
+}
+
+#agendFCExame{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+}
+
+#AgendText{
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+}
+ #AgendData{
+     position: absolute;
+    top: 240px;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%);
+ }

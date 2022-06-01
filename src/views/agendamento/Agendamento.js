@@ -25,8 +25,6 @@ export default function Agendamento() {
 
     registerLocale("pt", pt);
 
-    const [date, setDate] = useState(new Date());
-
     const [campanhas, setCampanhas] = useState({
         id: '',
         nome: '',
@@ -44,6 +42,7 @@ export default function Agendamento() {
         nome: ''
     });
 
+    const [dateAgendamento, setDateAgendamento] = useState(new Date());
     const [styleAgendamentoMeus, setStyleAgendamentoMeus] = useState("agendamentoMeusSelect");
     const [styleAgendamentoAgendar, setStyleAgendamentoAgendar] = useState("agendamentoAgendar");
     const [status, setStatus] = useState(true);
@@ -89,18 +88,6 @@ export default function Agendamento() {
         setStatus(false)
     }
 
-    const Input = ({ onChange, placeholder, value, isSecure, id, onClick }) => (
-        <TextField
-            onChvalueange={onChange}
-            placeholder={placeholder}
-            value={date}
-            isSecure={isSecure}
-            id={id}
-            onClick={onClick}
-        />
-    );
-
-
     const Exibir = () => {
         if (status)
             return (
@@ -111,32 +98,35 @@ export default function Agendamento() {
             return (
                 <div id='agendamentoPainel'>
                     <Box id="agendamentoForm">
-                        <FormControl sx={{ width: 200 }} size="small">
-                            <Select value={campanhas.nome}>
+                        <label id='agendLCampanha'>Campanha</label>
+                        <FormControl id='agendFCCampanha' sx={{ width: 200 }} size="small">
+                            <Select value={campanhas.id}>
                                 {campanhas.map(campanha => <MenuItem value={campanha.id}>{campanha.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
-
-                        <FormControl sx={{ width: 200 }} size="small">
-                            <Select value={grupos.nome}>
+                        <label id='agendLGrupo'>Grupos de Atendimentos</label>
+                        <FormControl id='agendFCGrupo' sx={{ width: 200 }} size="small">
+                            <Select key={grupos.id}>
                                 {grupos.map(grupo => <MenuItem value={grupo.id}>{grupo.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
-
-                        <FormControl sx={{ width: 200 }} size="small">
-                            <Select value={exames.nome}>
+                        <label id='agendLExame'>Tipo de Exame</label>
+                        <FormControl id='agendFCExame' sx={{ width: 200 }} size="small">
+                            <Select value={exames.id} >
                                 {exames.map(exame => <MenuItem value={exame.id}>{exame.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
 
-                        <DatePicker 
-                            onChange={(date:Date) => setDate(date)} 
-                            value={date}
+                        <DatePicker
+                            id='AgendData'
+                            onChange={(e) => setDateAgendamento(e)}
                             locale="pt"
-                            selected={date}
-                            customInput={<TextField sx={{ width: 200 }} size="small" value={date}/>}
+                            selected={dateAgendamento}
+                            //customInput={<TextField id='AgendText' sx={{ width: 200 }} size="small" value={dateAgendamento} />}
                             dateFormat="dd/MM/yyyy"
-                        /> 
+                        />
+
+                        <Button id='agendamentoProcurar' variant="contained">Procurar</Button>
 
                     </Box>
                 </div>
