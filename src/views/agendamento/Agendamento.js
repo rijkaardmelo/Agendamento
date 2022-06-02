@@ -14,6 +14,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
 
 import DatePicker, { registerLocale } from 'react-datepicker';
@@ -97,26 +100,43 @@ export default function Agendamento() {
         else
             return (
                 <div id='agendamentoPainel'>
+                    <label>Agendar</label>
                     <Box id="agendamentoForm">
-                        <label id='agendLCampanha'>Campanha</label>
+                        <label id='agendLCampanha'>Campanha:</label>
                         <FormControl id='agendFCCampanha' sx={{ width: 200 }} size="small">
                             <Select value={campanhas.id}>
                                 {campanhas.map(campanha => <MenuItem value={campanha.id}>{campanha.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
-                        <label id='agendLGrupo'>Grupos de Atendimentos</label>
+
+                        <label id='agendLMunicipio'>Município:</label>
+                        <FormControl id='agendFCMunicipio' sx={{ width: 200 }} size="small">
+                        <Select
+                                defaultValue=""
+                            >
+                                {/* {estabelecimentos.map(estabelecimento => <FormControlLabel value={estabelecimento.dsc_cidade} control={<Radio sx={{color:"#FFFFFF"}} />} label={estabelecimento.dsc_cidade} />)} */}
+                                <MenuItem value="Natal">Natal</MenuItem>
+                                <MenuItem value="Parnamirim" >Parnamirim</MenuItem>
+                                <MenuItem value="São Gonçalo" >São Gonçalo</MenuItem>
+                                <MenuItem value="Acari" >Acari</MenuItem>
+                                <MenuItem value="Caicó" >Caicó</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <label id='agendLGrupo'>Grupos de Atendimentos:</label>
                         <FormControl id='agendFCGrupo' sx={{ width: 200 }} size="small">
                             <Select key={grupos.id}>
                                 {grupos.map(grupo => <MenuItem value={grupo.id}>{grupo.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
-                        <label id='agendLExame'>Tipo de Exame</label>
+
+                        <label id='agendLExame'>Tipo de Exame:</label>
                         <FormControl id='agendFCExame' sx={{ width: 200 }} size="small">
                             <Select value={exames.id} >
                                 {exames.map(exame => <MenuItem value={exame.id}>{exame.nome}</MenuItem>)}
                             </Select>
                         </FormControl>
-
+                        <label id='agendLData'>Data:</label>
                         <DatePicker
                             id='AgendData'
                             onChange={(e) => setDateAgendamento(e)}
