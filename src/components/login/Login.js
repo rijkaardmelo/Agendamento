@@ -4,7 +4,6 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 import './Login.css';
@@ -18,14 +17,16 @@ export default function Login(props) {
         password: ''
     })
 
-    const validacao = () => {
+    const validacao = (e) => {
+        e.preventDefault();
         if (!(login.email === '' || login.password === '')) {
-            axios.post('http://10.200.36.243:3004/login', login)
-                .then(res => {
-                    if (res.status === 200)
-                        navigate('/agendamento')
-                    else
-                        Promise.reject()
+            return axios
+                .post('http://0.0.0.0:3004/login', login)
+                .then(response => {
+                    if (response.data.accessToken) {
+                        localStorage.setItem("user", JSON.stringify(response.data))
+                    }
+                    navigate('/agendamento')
                 })
                 .catch(err => console.log(err))
         }
@@ -38,14 +39,14 @@ export default function Login(props) {
     return (
         <div id='Login'>
             <label id='loginNao'>Não tem uma conta?</label>
-            <Button 
-            id="loginCriar" 
-            variant="contained" 
-            startIcon={<PersonOutlineOutlinedIcon />} 
-            onClick={props.cadastro}>
+            <Button
+                id="loginCriar"
+                variant="contained"
+                startIcon={<PersonOutlineOutlinedIcon />}
+                onClick={props.cadastro}>
                 Criar um usuário
             </Button>
-            <Box id='formLogin'>
+            <form id='formLogin' onSubmit={validacao}>
                 <label id='loginPreencha'>Preencha os campos abaixo</label>
                 <label id='loginEmail'>Email:</label>
                 <input
@@ -64,8 +65,8 @@ export default function Login(props) {
                     onChange={e => loginChange(e)}
                 />
                 <label id='loginEsqueceu'>Esqueceu sua senha? </label>
-                <Button id="loginButtonEntrar" onClick={validacao}>Entrar</Button>
-            </Box>
+                <Button id="loginButtonEntrar" type="submit">Entrar</Button>
+            </form>
         </div>
     );
 }

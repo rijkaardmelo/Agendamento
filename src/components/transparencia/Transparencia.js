@@ -1,3 +1,4 @@
+import { Icon } from '@mui/material';
 import Button from '@mui/material/Button';
 
 import './Transparencia.css'
@@ -5,20 +6,20 @@ import './Transparencia.css'
 export default function Transparencia(props) {
     return (
         <div id='Trasparencia'>
-            <div id='transIconCalendar' />
-            <span id='transAgendamento'>
+            <Icon id='transIconCalendar' />
+            <label id='transAgendamento'>
                 Agendamento Online
-            </span>
-            <span id='transRapido'>
+            </label>
+            <label id='transRapido'>
                 Rápido e seguro
-            </span>
-            <span id='transEvite'>
+            </label>
+            <label id='transEvite'>
                 Evite filas e aglomeração<br />
                 O seu bem é o bem de todos
-            </span>
+            </label>
             <Button id='transTransferencia' onClick={props.filtro}>TRANSFERÊNCIA</Button>
-            <div id='transIconLais' />
-            <div id='transIconUFRN' />
+            <Icon id='transIconLais' />
+            <Icon id='transIconUFRN' />
         </div>
     );
 }

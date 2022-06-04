@@ -3,7 +3,7 @@ import Agendamento from "./views/agendamento/Agendamento";
 
 import Home from './views/home/Home'
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -12,9 +12,6 @@ function App() {
           <Route path="agendamento" element={<Agendamento />} />
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
-
-export default App;
