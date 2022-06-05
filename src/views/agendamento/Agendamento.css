@@ -82,11 +82,24 @@
 
 #agendamentoAvatar {
     position: absolute;
-    right: 100px;
+    right: 150px;
     width: 36px;
     height: 36px;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+#agendOpenLogin{
+    position: absolute;
+    right: 20px;
+    width: 120px;
+    height: 40px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#openMenu{
+    font: normal normal bold 12px/26px Poppins;
 }
 
 #agendamentoPrincipal {
@@ -103,7 +116,7 @@
     height: 100vh;
 }
 
-#agendamentoPainel>label {
+#agendamentoPainel>label, #meusAgendamentos {
     position: absolute;
     color: var(--unnamed-color-0a0a0a);
     text-align: center;

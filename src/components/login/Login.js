@@ -26,7 +26,7 @@ export default function Login(props) {
                     if (response.data.accessToken) {
                         localStorage.setItem("user", JSON.stringify(response.data))
                     }
-                    navigate('/agendamento')
+                    navigate('/agendamento', { state: { usuario: login.email } })
                 })
                 .catch(err => console.log(err))
         }
